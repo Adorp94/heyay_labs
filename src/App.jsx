@@ -109,7 +109,7 @@ function App() {
                 </div>
               </h2>
 
-              <button className="">Hola</button>
+              <button className="">Habla ahora</button>
 
               <div
                 style={{ margin: "10px auto" }}
