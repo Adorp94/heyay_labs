@@ -68,7 +68,7 @@ function App() {
           </div>
         </nav>
 
-        <main className="p-20 flex flex-col gap-3 text-center sm:gap-4 justify-center pb-20">
+        <main className="py-20 flex flex-col gap-3 text-center sm:gap-4 justify-center">
           <div>
             <h1
               style={{
@@ -91,16 +91,16 @@ function App() {
                   Inteligencia Artificial Aplicada
                 </span>
               </div>
-              <div
+              <div>
+                <span
                 style={{
-                  fontSize: "5rem",
                   fontWeight: "700",
-                  letterSpacing: "-2px",
                   margin: "5px auto",
                 }}
-                className="bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-blue-600"
+                className="bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-blue-600 responsive-title2"
               >
                 {currentText}
+                </span>
               </div>
               <h2>
                 <div
@@ -229,7 +229,7 @@ function App() {
 
               <div
                 style={{ margin: "10px auto" }}
-                className="grid grid-cols-3 gap-8 mt-8"
+                className="grid grid-cols-3 gap-8 mt-8 px-20"
               >
                 <div className="flex flex-col items-center text-center">
                   <svg
