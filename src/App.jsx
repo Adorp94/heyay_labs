@@ -34,7 +34,7 @@ function App() {
         <nav className="flex items-center justify-between p-2">
           <div className="flex items-center">
             <img
-              src="src/assets/Heyaylogo.png"
+              src="https://github.com/Adorp94/heyay_labs/blob/main/src/assets/Heyaylogo.png?raw=true"
               alt="Logo"
               className="w-6 h-6 mr-2"
             ></img>
