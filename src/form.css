@@ -29,7 +29,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     position: relative; /* Add position relative to the h2 */   
 }
 
@@ -87,7 +87,7 @@
 /* CSS for labels */
 .form-group label {
     display: block;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 5px;
     text-align: left; /* Align labels to the left */
 }
@@ -97,7 +97,7 @@
 .form-group input[type="email"],
 .form-group textarea {
     width: 100%;
-    max-width: 100%; /* Allow inputs to take full width */
+    max-width: 200%; /* Allow inputs to take full width */
     padding: 1px;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
