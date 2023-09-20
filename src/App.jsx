@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./styles.css";
+import "./btn.css";
 import "./form.css";
+import "./styles.css";
 
 function App() {
   const [currentText, setCurrentText] = useState("GPT-Assisted");
@@ -24,9 +25,6 @@ function App() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
-
-
 
   return (
     <div className="flex flex-col p-5">
@@ -76,25 +74,27 @@ function App() {
               style={{
                 display: "block",
                 fontFamily: "-apple-system, sans-serif",
-                height: "80px",
-                lineHeight: "80px",
+                lineHeight: "4rem",
                 textAlign: "center",
                 width: "100%",
+                margin: "0 auto",
               }}
             >
-              <div
-                style={{
-                  color: "black",
-                  fontSize: "80px",
-                  fontWeight: "700",
-                  letterSpacing: "-2px",
-                }}
-              >
-                Inteligencia Artificial Aplicada
+              <div>
+                <span
+                  className="responsive-title"
+                  style={{
+                    color: "black",
+                    fontWeight: "700",
+                    letterSpacing: "-2px",
+                  }}
+                >
+                  Inteligencia Artificial Aplicada
+                </span>
               </div>
               <div
                 style={{
-                  fontSize: "80px",
+                  fontSize: "5rem",
                   fontWeight: "700",
                   letterSpacing: "-2px",
                   margin: "5px auto",
@@ -108,16 +108,17 @@ function App() {
                   style={{
                     color: "black",
                     fontSize: "30px",
-                    fontWeight: "550",
+                    fontWeight: "540",
                     letterSpacing: "-1px",
                     textAlign: "center",
                     display: "block",
                     margin: "10px auto",
                     lineHeight: "1.1",
                     maxWidth: "900px",
+                    marginTop: "1.7rem",
                   }}
                 >
-                  Descubre el Poder de la IA. Simplifica tus Procesos, Impulsa
+                  Descubre el poder de la IA. Simplifica tus Procesos, Impulsa
                   tu Crecimiento y Experimenta la Transformación.
                 </div>
               </h2>
@@ -127,7 +128,7 @@ function App() {
                   class="glow-on-hover"
                   type="button"
                   style={{
-                    margin: "50px auto",
+                    margin: "1.5rem auto",
                     textAlign: "center",
                     display: "flex",
                     justifyContent: "center",
