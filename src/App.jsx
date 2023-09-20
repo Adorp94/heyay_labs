@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./prueba.css";
+import "./styles.css";
 
 function App() {
   const [currentText, setCurrentText] = useState("GPT-Assisted");
@@ -109,7 +109,25 @@ function App() {
                 </div>
               </h2>
 
-              <button className="">Habla ahora</button>
+              <div class="button-container">
+                <button
+                  class="glow-on-hover"
+                  type="button"
+                  style={{
+                    margin: "50px auto",
+                    textAlign: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    extAlign: "center",
+                    flexDirection: "column",
+                    width: "250px",
+                    height: "40px",
+                  }}
+                >
+                  Habla con un experto de IA &rarr;
+                </button>
+              </div>
 
               <div
                 style={{ margin: "10px auto" }}
