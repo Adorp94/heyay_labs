@@ -1,16 +1,37 @@
-/* styles.css */
-
+/* Default styles for larger screens */
 .responsive-title {
-  font-size: 5rem; /* Default font size */
-  line-height: normal;
-}
-
-@media (max-width: 390px) {
-  .responsive-title {
-    text-align: center;
-    width: fit-content;
-    font-size: 2.5rem; /* Adjusted font size for smaller screens */
-    line-height: normal; /* Adjust this value to reduce the vertical spacing */
+    font-size: 5rem; /* Default font size */
+    line-height: normal;
+    letter-spacing: -2px;
 
   }
-}
+  
+  /* Responsive styles for screens up to 768px */
+  @media (max-width: 768px) {
+    .responsive-title {
+      text-align: center;
+      width: fit-content;
+      font-size: 3rem; /* Adjusted font size for medium screens */
+      line-height: normal; /* Adjust this value as needed */
+    }
+  }
+  
+  /* Responsive styles for screens up to 576px (small screens) */
+  @media (max-width: 576px) {
+    .responsive-title {
+      text-align: center;
+      width: fit-content;
+      font-size: 2rem; /* Adjusted font size for small screens */
+      line-height: normal; /* Adjust this value as needed */
+    }
+  }
+  
+  /* Responsive styles for screens up to 390px (extra small screens) */
+  @media (max-width: 390px) {
+    .responsive-title {
+      text-align: center;
+      width: fit-content;
+      font-size: 1.7rem; /* Adjusted font size for extra small screens */
+      line-height: normal; /* Adjust this value as needed */
+    }
+  }

@@ -86,7 +86,6 @@ function App() {
                   style={{
                     color: "black",
                     fontWeight: "700",
-                    letterSpacing: "-2px",
                   }}
                 >
                   Inteligencia Artificial Aplicada
