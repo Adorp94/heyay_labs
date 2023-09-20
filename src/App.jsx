@@ -74,7 +74,7 @@ function App() {
               style={{
                 display: "block",
                 fontFamily: "-apple-system, sans-serif",
-                lineHeight: "4rem",
+                lineHeight: "normal",
                 textAlign: "center",
                 width: "100%",
                 margin: "0 auto",
@@ -115,7 +115,7 @@ function App() {
                     margin: "10px auto",
                     lineHeight: "1.1",
                     maxWidth: "900px",
-                    marginTop: "1.7rem",
+                    marginTop: "1rem",
                   }}
                 >
                   Descubre el poder de la IA. Simplifica tus Procesos, Impulsa
