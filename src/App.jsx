@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
+import "./form.css";
 
 function App() {
   const [currentText, setCurrentText] = useState("GPT-Assisted");
   const phrases = ["GPT-Asistido", "IA Generativa", "Visión Computacional"];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,6 +16,17 @@ function App() {
 
     return () => clearInterval(interval);
   }, [currentIndex]);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+
+
 
   return (
     <div className="flex flex-col p-5">
@@ -124,10 +137,95 @@ function App() {
                     width: "250px",
                     height: "40px",
                   }}
+                  onClick={openModal}
                 >
                   Habla con un experto de IA &rarr;
                 </button>
               </div>
+
+              {/* Modal */}
+              {isModalOpen && (
+                <div className="modal-overlay">
+                  <div className="modal">
+                    <span className="close" onClick={closeModal}>
+                      &times;
+                    </span>
+                    <h2>HABLA CON UN EXPERTO EN IA</h2>
+                    <form>
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label htmlFor="nombre">Nombre*:</label>
+                          <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            required
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="apellidos">Apellidos*:</label>
+                          <input
+                            type="text"
+                            id="apellidos"
+                            name="apellidos"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label htmlFor="empresa">Empresa/Negocio*:</label>
+                          <input
+                            type="text"
+                            id="empresa"
+                            name="empresa"
+                            required
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="puesto">Puesto*:</label>
+                          <input
+                            type="text"
+                            id="puesto"
+                            name="puesto"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="form-row">
+                        <div className="form-group correo-proporcione">
+                          <label htmlFor="correo">Correo*:</label>
+                          <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="form-row">
+                        <div
+                          className="form-group correo-proporcione"
+                          style={{ gridColumn: "span 2" }}
+                        >
+                          <label htmlFor="detalles">
+                            Proporcione detalles sobre su proyecto*:
+                          </label>
+                          <textarea
+                            id="detalles"
+                            name="detalles"
+                            rows="4"
+                            required
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <button type="submit">Enviar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              )}
 
               <div
                 style={{ margin: "10px auto" }}
