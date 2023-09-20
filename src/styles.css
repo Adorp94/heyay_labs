@@ -63,3 +63,41 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+/* Small screens (phones) */
+@media (max-width: 640px) {
+    /* Add your mobile-specific styles here */
+
+    /* Center-align the button text on small screens */
+    .button-container {
+        text-align: center;
+    }
+
+    /* Adjust other styles as needed for small screens */
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    /* Add styles for medium-sized screens here */
+
+    /* Example: Increase font size for some elements */
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+    /* Add styles for larger screens here */
+
+    /* Example: Widen the button for larger screens */
+    .glow-on-hover {
+        width: 250px;
+    }
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
