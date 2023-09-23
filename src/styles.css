@@ -1,78 +1,87 @@
-/* TITLE 1 */
-/* Default styles for larger screens */
-.responsive-title {
-    font-size: 5rem; /* Default font size */
-    line-height: normal;
-    letter-spacing: -2px;
+/* Grid and Row Styles */
+.grid {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
 
-  }
-  
-  /* Responsive styles for screens up to 768px */
-  @media (max-width: 768px) {
-    .responsive-title {
-      text-align: center;
-      width: fit-content;
-      font-size: 3rem; /* Adjusted font size for medium screens */
-      line-height: normal; /* Adjust this value as needed */
-    }
-  }
-  
-  /* Responsive styles for screens up to 576px (small screens) */
-  @media (max-width: 576px) {
-    .responsive-title {
-      text-align: center;
-      width: fit-content;
-      font-size: 2rem; /* Adjusted font size for small screens */
-      line-height: normal; /* Adjust this value as needed */
-    }
-  }
-  
-  /* Responsive styles for screens up to 390px (extra small screens) */
-  @media (max-width: 390px) {
-    .responsive-title {
-      text-align: center;
-      width: fit-content;
-      font-size: 2rem; /* Adjusted font size for extra small screens */
-      line-height: normal; /* Adjust this value as needed */
-    }
-  }
-
-/* TITLE 2 */
 /* Default styles for larger screens */
+.responsive-title,
 .responsive-title2 {
-    font-size: 5rem; /* Default font size */
-    line-height: normal;
-    letter-spacing: -2px;
+  font-size: 5rem; /* Default font size */
+  line-height: normal;
+  letter-spacing: -2px;
+}
+.grid-row.row-1 {
+  height: 6rem;
+}
 
+.grid-row.row-2 {
+  height: 7rem;
+}
+
+.grid-row.row-3 {
+  height: 5rem;
+}
+
+/* Responsive styles for screens up to 768px */
+@media (max-width: 768px) {
+  .grid-row.row-1 {
+    height: 5rem;
   }
   
-  /* Responsive styles for screens up to 768px */
-  @media (max-width: 768px) {
-    .responsive-title2 {
-      text-align: center;
-      width: fit-content;
-      font-size: 3rem; /* Adjusted font size for medium screens */
-      line-height: normal; /* Adjust this value as needed */
-    }
+  .grid-row.row-2 {
+    height: 7rem;
   }
   
-  /* Responsive styles for screens up to 576px (small screens) */
-  @media (max-width: 576px) {
-    .responsive-title2 {
-      text-align: center;
-      width: fit-content;
-      font-size: 2rem; /* Adjusted font size for small screens */
-      line-height: normal; /* Adjust this value as needed */
-    }
+  .grid-row.row-3 {
+    height: 5rem;
+  }
+
+  .responsive-title{
+    text-align: center;
+    width: fit-content;
+    font-size: 3rem; /* Adjusted font size for extra small screens */
+    line-height: normal; /* Adjust this value as needed */
+    white-space: pre-line;
+  }
+  .responsive-title2 {
+    font-size: 4rem;
+  }
+  .responsive-title3 {
+    font-size: 1.8rem;
+    line-height: normal;
+  }
+}
+
+/* Responsive styles for screens up to 390px (extra small screens) */
+@media (max-width: 390px) {
+  .grid-row.row-1 {
+    height: 5rem;
   }
   
-  /* Responsive styles for screens up to 390px (extra small screens) */
-  @media (max-width: 390px) {
-    .responsive-title2 {
-      text-align: center;
-      width: fit-content;
-      font-size: 2.5rem; /* Adjusted font size for extra small screens */
-      line-height: normal; /* Adjust this value as needed */
-      white-space: pre-line;
-    }
+  .grid-row.row-2 {
+    height: 7rem;
   }
+  
+  .grid-row.row-3 {
+    height: 5rem;
+  }
+
+  .responsive-title{
+    text-align: center;
+    width: fit-content;
+    font-size: 2rem; /* Adjusted font size for extra small screens */
+    line-height: normal; /* Adjust this value as needed */
+    white-space: pre-line;
+  }
+  .responsive-title2 {
+    font-size: 2.5rem;
+  }
+  .responsive-title3 {
+    font-size: 1.2rem;
+    line-height: normal;
+  }
+}
+
+
+

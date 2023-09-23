@@ -19,7 +19,7 @@
     height: 80%; /* Adjust the width as needed */
     max-height: 500px; /* Set a maximum width */
     margin: 0 auto;
-    padding: 0px; /* Add padding to the modal content */
+    padding: .5rem; /* Add padding to the modal content */
     background-color: white;
     border-radius: 10px;
     position: relative;
@@ -31,6 +31,7 @@
     font-size: 16px;
     font-weight: 600;
     position: relative; /* Add position relative to the h2 */   
+    padding: 1rem;
 }
 
 /* Add a grey line divider */

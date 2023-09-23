@@ -68,42 +68,49 @@ function App() {
           </div>
         </nav>
 
-        <main className="py-20 flex flex-col gap-3 text-center sm:gap-4 justify-center">
+        <main className="flex flex-col gap-3 text-center sm:gap-4 justify-center">
           <div>
-            <h1
-              style={{
-                display: "block",
-                fontFamily: "-apple-system, sans-serif",
-                lineHeight: "normal",
-                textAlign: "center",
-                width: "100%",
-                margin: "0 auto",
-              }}
-            >
-              <div>
-                <span
-                  className="responsive-title"
+            <div className="grid grid-rows pt-20">
+              <div className="grid-row row-1 flex justify-center items-center">
+                <h1
                   style={{
-                    color: "black",
-                    fontWeight: "700",
+                    display: "block",
+                    fontFamily: "-apple-system, sans-serif",
+                    textAlign: "center",
+                    width: "100%",
                   }}
                 >
-                  Inteligencia Artificial Aplicada
-                </span>
+                  <div>
+                    <span
+                      className="responsive-title"
+                      style={{
+                        color: "black",
+                        fontWeight: "700",
+                      }}
+                    >
+                      Inteligencia Artificial Aplicada
+                    </span>
+                  </div>
+                </h1>
               </div>
-              <div>
-                <span
-                style={{
-                  fontWeight: "700",
-                  margin: "5px auto",
-                }}
-                className="bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-blue-600 responsive-title2"
-              >
-                {currentText}
-                </span>
+
+              <div className="grid-row row-2 flex justify-center items-center">
+                <h2>
+                  <div>
+                    <span
+                      style={{
+                        fontWeight: "700",
+                      }}
+                      className="bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-blue-600 responsive-title2"
+                    >
+                      {currentText}
+                    </span>
+                  </div>
+                </h2>
               </div>
-              <h2>
-                <div
+
+              <div className="grid-row row-3 flex justify-center items-center">
+                <h3
                   style={{
                     color: "black",
                     fontSize: "30px",
@@ -111,239 +118,231 @@ function App() {
                     letterSpacing: "-1px",
                     textAlign: "center",
                     display: "block",
-                    margin: "10px auto",
-                    lineHeight: "1.1",
                     maxWidth: "900px",
-                    marginTop: "1rem",
                   }}
                 >
-                  Descubre el poder de la IA. Simplifica tus Procesos, Impulsa
-                  tu Crecimiento y Experimenta la Transformación.
-                </div>
-              </h2>
-
-              <div class="button-container">
-                <button
-                  class="glow-on-hover"
-                  type="button"
-                  style={{
-                    margin: "1.5rem auto",
-                    textAlign: "center",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    extAlign: "center",
-                    flexDirection: "column",
-                    width: "250px",
-                    height: "40px",
-                  }}
-                  onClick={openModal}
-                >
-                  Habla con un experto de IA &rarr;
-                </button>
-              </div>
-
-              {/* Modal */}
-              {isModalOpen && (
-                <div className="modal-overlay">
-                  <div className="modal">
-                    <span className="close" onClick={closeModal}>
-                      &times;
+                  <div>
+                    <span 
+                    className="responsive-title3">
+                      Descubre el poder de la IA. Simplifica tus Procesos,
+                      Impulsa tu Crecimiento y Experimenta la Transformación.
                     </span>
-                    <h2>HABLA CON UN EXPERTO EN IA</h2>
-                    <form>
-                      <div className="form-row">
-                        <div className="form-group">
-                          <label htmlFor="nombre">Nombre*:</label>
-                          <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            required
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="apellidos">Apellidos*:</label>
-                          <input
-                            type="text"
-                            id="apellidos"
-                            name="apellidos"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="form-row">
-                        <div className="form-group">
-                          <label htmlFor="empresa">Empresa/Negocio*:</label>
-                          <input
-                            type="text"
-                            id="empresa"
-                            name="empresa"
-                            required
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="puesto">Puesto*:</label>
-                          <input
-                            type="text"
-                            id="puesto"
-                            name="puesto"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="form-row">
-                        <div className="form-group correo-proporcione">
-                          <label htmlFor="correo">Correo*:</label>
-                          <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="form-row">
-                        <div
-                          className="form-group correo-proporcione"
-                          style={{ gridColumn: "span 2" }}
-                        >
-                          <label htmlFor="detalles">
-                            Proporcione detalles sobre su proyecto*:
-                          </label>
-                          <textarea
-                            id="detalles"
-                            name="detalles"
-                            rows="4"
-                            required
-                          ></textarea>
-                        </div>
+                  </div>
+                </h3>
+              </div>
+            </div>
+
+            <div class="button-container">
+              <button
+                class="glow-on-hover"
+                type="button"
+                style={{
+                  margin: "1.5rem auto",
+                  textAlign: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  extAlign: "center",
+                  flexDirection: "column",
+                  width: "250px",
+                  height: "40px",
+                }}
+                onClick={openModal}
+              >
+                Habla con un experto de IA &rarr;
+              </button>
+            </div>
+
+            {/* Modal */}
+            {isModalOpen && (
+              <div className="modal-overlay">
+                <div className="modal">
+                  <span className="close" onClick={closeModal}>
+                    &times;
+                  </span>
+                  <h2>HABLA CON UN EXPERTO EN IA</h2>
+                  <form>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label htmlFor="nombre">Nombre*:</label>
+                        <input type="text" id="nombre" name="nombre" required />
                       </div>
                       <div className="form-group">
-                        <button type="submit">Enviar</button>
+                        <label htmlFor="apellidos">Apellidos*:</label>
+                        <input
+                          type="text"
+                          id="apellidos"
+                          name="apellidos"
+                          required
+                        />
                       </div>
-                    </form>
-                  </div>
-                </div>
-              )}
-
-              <div
-                style={{ margin: "10px auto" }}
-                className="grid grid-cols-3 gap-8 mt-8 px-20"
-              >
-                <div className="flex flex-col items-center text-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="35"
-                    height="35"
-                    fill="black"
-                    class="bi bi-robot"
-                    viewBox="0 0 16 16"
-                  >
-                    {
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="black"
-                        class="bi bi-robot"
-                        viewBox="0 0 16 16"
+                    </div>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label htmlFor="empresa">Empresa/Negocio*:</label>
+                        <input
+                          type="text"
+                          id="empresa"
+                          name="empresa"
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="puesto">Puesto*:</label>
+                        <input type="text" id="puesto" name="puesto" required />
+                      </div>
+                    </div>
+                    <div className="form-row">
+                      <div className="form-group correo-proporcione">
+                        <label htmlFor="correo">Correo*:</label>
+                        <input
+                          type="email"
+                          id="correo"
+                          name="correo"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="form-row">
+                      <div
+                        className="form-group correo-proporcione"
+                        style={{ gridColumn: "span 2" }}
                       >
-                        <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z" />
-                        <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
-                      </svg>
-                    }
-                  </svg>
-                  <h3
-                    className="mt-2 text-lg font-semibold"
-                    style={{ color: "black" }}
-                  >
-                    GPT-Asistido
-                  </h3>
-                  <p
-                    className="mt-2 text-gray-600"
-                    style={{ lineHeight: "1.1", maxWidth: "300px" }}
-                  >
-                    10x Más Productivo. Descubre el Poder de los LLMs en tus
-                    Tareas.
-                  </p>
-                </div>
-                <div className="flex flex-col items-center text-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="35"
-                    height="35"
-                    fill="black"
-                    class="bi bi-card-image"
-                    viewBox="0 0 16 16"
-                  >
-                    {
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="black"
-                        class="bi bi-card-image"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                        <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z" />
-                      </svg>
-                    }
-                  </svg>
-                  <h3
-                    className="mt-2 text-lg font-semibold"
-                    style={{ color: "black" }}
-                  >
-                    IA Generativa
-                  </h3>
-                  <p
-                    className="mt-2 text-gray-600"
-                    style={{ lineHeight: "1.1", maxWidth: "360px" }}
-                  >
-                    Crea Nuevas Experiencias. Los Mejores Modelos de Audio,
-                    Imagen y Video.
-                  </p>
-                </div>
-                <div className="flex flex-col items-center text-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="35"
-                    height="35"
-                    fill="black"
-                    class="bi bi-eye"
-                    viewBox="0 0 16 16"
-                  >
-                    {
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="black"
-                        class="bi bi-eye"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                      </svg>
-                    }
-                  </svg>
-                  <h3
-                    className="mt-2 text-lg font-semibold"
-                    style={{ color: "black" }}
-                  >
-                    Visión Computacional
-                  </h3>
-                  <p
-                    className="mt-2 text-gray-600"
-                    style={{ lineHeight: "1.1", maxWidth: "360px" }}
-                  >
-                    Dale ojos a la IA. Obten Información Valiosa y Revoluciona
-                    tu Manera de Trabajar.
-                  </p>
+                        <label htmlFor="detalles">
+                          Proporcione detalles sobre su proyecto*:
+                        </label>
+                        <textarea
+                          id="detalles"
+                          name="detalles"
+                          rows="4"
+                          required
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <button type="submit">Enviar</button>
+                    </div>
+                  </form>
                 </div>
               </div>
-            </h1>
+            )}
+
+            <div
+              style={{ margin: "10px auto" }}
+              className="grid grid-cols-3 gap-8 mt-8 px-20"
+            >
+              <div className="flex flex-col items-center text-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  fill="black"
+                  class="bi bi-robot"
+                  viewBox="0 0 16 16"
+                >
+                  {
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="black"
+                      class="bi bi-robot"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z" />
+                      <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
+                    </svg>
+                  }
+                </svg>
+                <h3
+                  className="mt-2 text-lg font-semibold"
+                  style={{ color: "black" }}
+                >
+                  GPT-Asistido
+                </h3>
+                <p
+                  className="mt-2 text-gray-600"
+                  style={{ lineHeight: "1.1", maxWidth: "300px" }}
+                >
+                  10x Más Productivo. Descubre el Poder de los LLMs en tus
+                  Tareas.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  fill="black"
+                  class="bi bi-card-image"
+                  viewBox="0 0 16 16"
+                >
+                  {
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="black"
+                      class="bi bi-card-image"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                      <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z" />
+                    </svg>
+                  }
+                </svg>
+                <h3
+                  className="mt-2 text-lg font-semibold"
+                  style={{ color: "black" }}
+                >
+                  IA Generativa
+                </h3>
+                <p
+                  className="mt-2 text-gray-600"
+                  style={{ lineHeight: "1.1", maxWidth: "360px" }}
+                >
+                  Crea Nuevas Experiencias. Los Mejores Modelos de Audio, Imagen
+                  y Video.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  fill="black"
+                  class="bi bi-eye"
+                  viewBox="0 0 16 16"
+                >
+                  {
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="black"
+                      class="bi bi-eye"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                      <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                    </svg>
+                  }
+                </svg>
+                <h3
+                  className="mt-2 text-lg font-semibold"
+                  style={{ color: "black" }}
+                >
+                  Visión Computacional
+                </h3>
+                <p
+                  className="mt-2 text-gray-600"
+                  style={{ lineHeight: "1.1", maxWidth: "360px" }}
+                >
+                  Dale ojos a la IA. Obten Información Valiosa y Revoluciona tu
+                  Manera de Trabajar.
+                </p>
+              </div>
+            </div>
           </div>
         </main>
       </section>
