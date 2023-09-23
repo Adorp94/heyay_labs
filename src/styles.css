@@ -23,21 +23,26 @@
   height: 5rem;
 }
 
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 /* Responsive styles for screens up to 768px */
 @media (max-width: 768px) {
   .grid-row.row-1 {
     height: 5rem;
   }
-  
+
   .grid-row.row-2 {
     height: 7rem;
   }
-  
+
   .grid-row.row-3 {
     height: 5rem;
   }
 
-  .responsive-title{
+  .responsive-title {
     text-align: center;
     width: fit-content;
     font-size: 3rem; /* Adjusted font size for extra small screens */
@@ -58,16 +63,16 @@
   .grid-row.row-1 {
     height: 5rem;
   }
-  
+
   .grid-row.row-2 {
     height: 7rem;
   }
-  
+
   .grid-row.row-3 {
     height: 5rem;
   }
 
-  .responsive-title{
+  .responsive-title {
     text-align: center;
     width: fit-content;
     font-size: 2rem; /* Adjusted font size for extra small screens */
@@ -81,7 +86,9 @@
     font-size: 1.2rem;
     line-height: normal;
   }
+
+  .icon-grid {
+    grid-template-columns: 1fr; /* One column */
+    grid-template-rows: repeat(3, 1fr); /* Three rows */
+  }
 }
-
-
-

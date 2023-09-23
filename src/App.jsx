@@ -68,6 +68,7 @@ function App() {
           </div>
         </nav>
 
+        {/* Title grid */}
         <main className="flex flex-col gap-3 text-center sm:gap-4 justify-center">
           <div>
             <div className="grid grid-rows pt-20">
@@ -122,8 +123,7 @@ function App() {
                   }}
                 >
                   <div>
-                    <span 
-                    className="responsive-title3">
+                    <span className="responsive-title3">
                       Descubre el poder de la IA. Simplifica tus Procesos,
                       Impulsa tu Crecimiento y Experimenta la Transformación.
                     </span>
@@ -137,7 +137,7 @@ function App() {
                 class="glow-on-hover"
                 type="button"
                 style={{
-                  margin: "1.5rem auto",
+                  margin: "2.5rem auto",
                   textAlign: "center",
                   display: "flex",
                   justifyContent: "center",
@@ -227,9 +227,10 @@ function App() {
               </div>
             )}
 
+            {/* Icon grid */}
             <div
               style={{ margin: "10px auto" }}
-              className="grid grid-cols-3 gap-8 mt-8 px-20"
+              className="icon-grid gap-8 mt-8 px-20"
             >
               <div className="flex flex-col items-center text-center">
                 <svg

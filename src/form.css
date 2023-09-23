@@ -14,12 +14,12 @@
   
 /* Modal Content */
 .modal {
-    width: 80%; /* Adjust the width as needed */
+    width: 90%; /* Adjust the width as needed */
     max-width: 500px; /* Set a maximum width */
     height: 80%; /* Adjust the width as needed */
-    max-height: 500px; /* Set a maximum width */
+    max-height: 450px; /* Set a maximum width */
     margin: 0 auto;
-    padding: .5rem; /* Add padding to the modal content */
+    padding: 1rem; /* Add padding to the modal content */
     background-color: white;
     border-radius: 10px;
     position: relative;
@@ -27,7 +27,7 @@
   
 .modal h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     font-size: 16px;
     font-weight: 600;
     position: relative; /* Add position relative to the h2 */   
