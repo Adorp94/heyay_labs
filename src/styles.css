@@ -59,7 +59,7 @@
 }
 
 /* Responsive styles for screens up to 390px (extra small screens) */
-@media (max-width: 390px) {
+@media (max-width: 430px) {
   .grid-row.row-1 {
     height: 5rem;
   }
