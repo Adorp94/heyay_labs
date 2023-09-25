@@ -51,6 +51,9 @@ function App() {
         },
       ]);
 
+      console.log("Data:", data); // Add this line
+      console.log("Error:", error); // Add this line
+
       if (data) {
         setSubmissionSuccess(true);
         setSubmissionError(null);
