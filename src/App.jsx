@@ -84,8 +84,8 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col p-5">
-      <section className="min-h-screen flex flex-col">
+    <div className="flex flex-col">
+      <section className="min-h-screen flex flex-col p-5">
         <nav className="flex items-center justify-between p-2">
           <div className="flex items-center">
             <img
@@ -432,7 +432,6 @@ function App() {
           <Analytics />
         </main>
       </section>
-      <footer></footer>
     </div>
   );
 }
