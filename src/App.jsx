@@ -162,7 +162,7 @@ function App() {
                     &times;
                   </span>
                   <h2>HABLA CON UN EXPERTO EN IA</h2>
-                  <form>
+                  <form action="https://formspree.io/f/xrgwyvpn" method="POST">
                     <div className="form-row">
                       <div className="form-group">
                         <label htmlFor="nombre">Nombre*:</label>
@@ -220,6 +220,7 @@ function App() {
                         ></textarea>
                       </div>
                     </div>
+
                     <div className="form-group">
                       <button type="submit">Enviar</button>
                     </div>
