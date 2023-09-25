@@ -38,10 +38,10 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     try {
       console.log("Before form submission");
-      
+
       const { data, error } = await supabase.from("contact_form").upsert([
         {
           nombre: event.target.nombre.value,
@@ -52,17 +52,29 @@ function App() {
           detalles: event.target.detalles.value,
         },
       ]);
-      
+
       console.log("After form submission");
       console.log("Data:", data);
-console.log("Error:", error);
-  
+      console.log("Error:", error);
+      console.log("Form Data:", {
+        nombre: event.target.nombre.value,
+        apellidos: event.target.apellidos.value,
+        empresa: event.target.empresa.value,
+        puesto: event.target.puesto.value,
+        correo: event.target.correo.value,
+        detalles: event.target.detalles.value,
+      });
+
       if (data) {
         setSubmissionSuccess(true);
         setSubmissionError(null);
       } else {
         setSubmissionSuccess(false);
-        setSubmissionError(error && error.message ? error.message : "Error submitting form. Please try again");
+        setSubmissionError(
+          error && error.message
+            ? error.message
+            : "Error submitting form. Please try again"
+        );
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -70,7 +82,6 @@ console.log("Error:", error);
       setSubmissionError("Error submitting form.");
     }
   };
-  
 
   return (
     <div className="flex flex-col p-5">
