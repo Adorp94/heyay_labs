@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./btn.css";
 import "./form.css";
 import "./styles.css";
-import { Analytics } from '@vercel/analytics/react';
+import { createClient } from "@supabase/supabase-js";
 
 function App() {
   const [currentText, setCurrentText] = useState("GPT-Assisted");
@@ -25,6 +25,33 @@ function App() {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const supabaseUrl = "https://mqrioyirlvbguhnbtwgy.supabase.co";
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xcmlveWlybHZiZ3VobmJ0d2d5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU2NjE4MTMsImV4cCI6MjAxMTIzNzgxM30.tBoLMPows5SDZWA3UqlpOG8hCn-uqc_y8IqaJMCXVPY";
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const { data, error } = await supabase
+      .from('form_submissions')
+      .insert([
+        {
+          nombre: event.target.nombre.value,
+          apellidos: event.target.apellidos.value,
+          empresa: event.target.empresa.value,
+          puesto: event.target.puesto.value,
+          correo: event.target.correo.value,
+          detalles: event.target.detalles.value,
+        },
+      ]);
+  
+    if (data) {
+      alert('Submission successful!');
+    } else {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
@@ -162,7 +189,7 @@ function App() {
                     &times;
                   </span>
                   <h2>HABLA CON UN EXPERTO EN IA</h2>
-                  <form action="https://formspree.io/f/xrgwyvpn" method="POST">
+                  <form onSubmit={handleSubmit}>
                     <div className="form-row">
                       <div className="form-group">
                         <label htmlFor="nombre">Nombre*:</label>
