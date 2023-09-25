@@ -35,8 +35,7 @@ function App() {
 
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [submissionError, setSubmissionError] = useState(null);
-
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -68,17 +67,20 @@ function App() {
       });
 
       if (data) {
-        // Close the current modal
-        closeModal();
-
-        // Show the success modal
-        setShowSuccessModal(true);
+        setSubmissionSuccess(true);
+        setSubmissionError(null);
       } else {
-        // Don't show error messages
+        setSubmissionSuccess(false);
+        setSubmissionError(
+          error && error.message
+            ? error.message
+            : "Error submitting form. Please try again"
+        );
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      // Don't show error messages
+      setSubmissionSuccess(false);
+      setSubmissionError("Error submitting form.");
     }
   };
 
@@ -289,22 +291,6 @@ function App() {
                   {submissionError && (
                     <div className="submission-error">{submissionError}</div>
                   )}
-                </div>
-              </div>
-            )}
-
-            {/* Success Modal */}
-            {showSuccessModal && (
-              <div className="modal-overlay">
-                <div className="modal">
-                  <span
-                    className="close"
-                    onClick={() => setShowSuccessModal(false)}
-                  >
-                    &times;
-                  </span>
-                  <h2>Registro Exitoso</h2>
-                  <p>Tu registro se ha enviado exitosamente.</p>
                 </div>
               </div>
             )}
