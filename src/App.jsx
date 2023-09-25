@@ -38,8 +38,10 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
+      console.log("Before form submission");
+      
       const { data, error } = await supabase.from("contact_form").upsert([
         {
           nombre: event.target.nombre.value,
@@ -50,7 +52,9 @@ function App() {
           detalles: event.target.detalles.value,
         },
       ]);
-
+      
+      console.log("After form submission");
+  
       if (data) {
         setSubmissionSuccess(true);
         setSubmissionError(null);
@@ -64,6 +68,7 @@ function App() {
       setSubmissionError("Error submitting form.");
     }
   };
+  
 
   return (
     <div className="flex flex-col p-5">
