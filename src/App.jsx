@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./btn.css";
 import "./form.css";
 import "./styles.css";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [currentText, setCurrentText] = useState("GPT-Assisted");
@@ -345,6 +346,7 @@ function App() {
               </div>
             </div>
           </div>
+          <Analytics />
         </main>
       </section>
       <footer></footer>
