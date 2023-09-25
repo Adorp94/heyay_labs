@@ -28,7 +28,7 @@ function App() {
     setIsModalOpen(false);
   };
 
-  const supabaseUrl = "https://db.mqrioyirlvbguhnbtwgy.supabase.co/postgres";
+  const supabaseUrl = "https://mqrioyirlvbguhnbtwgy.supabase.co";
   const supabaseKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xcmlveWlybHZiZ3VobmJ0d2d5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU2NjE4MTMsImV4cCI6MjAxMTIzNzgxM30.tBoLMPows5SDZWA3UqlpOG8hCn-uqc_y8IqaJMCXVPY";
   const supabase = createClient(supabaseUrl, supabaseKey);
@@ -71,7 +71,7 @@ function App() {
         <nav className="flex items-center justify-between p-2">
           <div className="flex items-center">
             <img
-              src="https://github.com/Adorp94/heyay_labs/blob/main/src/assets/Heyaylogo.png?raw=true"
+              src="https://github.com/Adorp94/media/blob/main/Heyaylogo.png?raw=true"
               alt="Logo"
               className="w-6 h-6 mr-2"
             ></img>
