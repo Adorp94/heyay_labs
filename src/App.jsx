@@ -33,12 +33,14 @@ function App() {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xcmlveWlybHZiZ3VobmJ0d2d5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU2NjE4MTMsImV4cCI6MjAxMTIzNzgxM30.tBoLMPows5SDZWA3UqlpOG8hCn-uqc_y8IqaJMCXVPY";
   const supabase = createClient(supabaseUrl, supabaseKey);
 
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
+  const [submissionError, setSubmissionError] = useState(null);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
-    const { data, error } = await supabase
-      .from('form_submissions')
-      .insert([
+
+    try {
+      const { data, error } = await supabase.from("form_submissions").upsert([
         {
           nombre: event.target.nombre.value,
           apellidos: event.target.apellidos.value,
@@ -48,11 +50,18 @@ function App() {
           detalles: event.target.detalles.value,
         },
       ]);
-  
-    if (data) {
-      alert('Submission successful!');
-    } else {
-      console.error('Error submitting form:', error);
+
+      if (data) {
+        setSubmissionSuccess(true);
+        setSubmissionError(null);
+      } else {
+        setSubmissionSuccess(false);
+        setSubmissionError(error.message || "Error submitting form.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmissionSuccess(false);
+      setSubmissionError("Error submitting form.");
     }
   };
 
@@ -254,6 +263,16 @@ function App() {
                       <button type="submit">Enviar</button>
                     </div>
                   </form>
+
+                  {submissionSuccess && (
+                    <div className="submission-success">
+                      Submission successful!
+                    </div>
+                  )}
+
+                  {submissionError && (
+                    <div className="submission-error">{submissionError}</div>
+                  )}
                 </div>
               </div>
             )}
