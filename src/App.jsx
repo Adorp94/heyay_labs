@@ -51,15 +51,12 @@ function App() {
         },
       ]);
 
-      console.log("Data:", data); // Add this line
-      console.log("Error:", error); // Add this line
-
       if (data) {
         setSubmissionSuccess(true);
         setSubmissionError(null);
       } else {
         setSubmissionSuccess(false);
-        setSubmissionError(error.message || "Error submitting form.");
+        setSubmissionError(error && error.message ? error.message : "Error submitting form.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
