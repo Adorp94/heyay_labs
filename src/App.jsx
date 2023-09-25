@@ -70,6 +70,7 @@ function App() {
         setIsModalOpen(false); // Close the modal on successful submission
 
       } else {
+        setIsModalOpen(false);
         console.error("Error submitting form:", error);
       }
     } catch (error) {
