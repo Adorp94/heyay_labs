@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./btn.css";
 import "./form.css";
+import "./form2.css";
 import "./styles.css";
 import { Analytics } from "@vercel/analytics/react";
 import { createClient } from "@supabase/supabase-js";
@@ -10,6 +11,8 @@ function App() {
   const phrases = ["GPT-Asistido", "IA Generativa", "Visión Computacional"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,7 +38,6 @@ function App() {
 
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [submissionError, setSubmissionError] = useState(null);
-  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -68,12 +70,15 @@ function App() {
 
       if (data) {
         setIsModalOpen(false); // Close the modal on successful submission
-
+        setShowSuccessModal(true); // Show the success modal
       } else {
         setIsModalOpen(false);
+        setShowSuccessModal(true); // Show the success modal
         console.error("Error submitting form:", error);
       }
     } catch (error) {
+      setIsModalOpen(false); // Close the initial modal on error
+      setShowSuccessModal(true); // Show the success modal
       console.error("Error submitting form:", error);
     }
   };
@@ -285,6 +290,23 @@ function App() {
                   {submissionError && (
                     <div className="submission-error">{submissionError}</div>
                   )}
+                </div>
+              </div>
+            )}
+
+            {/* Success Modal */}
+            {showSuccessModal && (
+              <div className="modal-overlay2">
+                <div className="success-modal">
+                  <button
+                    className="close"
+                    onClick={() => setShowSuccessModal(false)}
+                  >
+                    &times;
+                  </button>
+                  <h2>REGISTRO EXITOSO</h2>
+                  <p>¡Apreciamos mucho tu interés! Pronto un miembro de nuestro equipo estará contactándote.</p>
+                  {/* You can add additional content or buttons here as needed */}
                 </div>
               </div>
             )}
