@@ -67,20 +67,13 @@ function App() {
       });
 
       if (data) {
-        setSubmissionSuccess(true);
-        setSubmissionError(null);
+        setIsModalOpen(false); // Close the modal on successful submission
+
       } else {
-        setSubmissionSuccess(false);
-        setSubmissionError(
-          error && error.message
-            ? error.message
-            : "Error submitting form. Please try again"
-        );
+        console.error("Error submitting form:", error);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setSubmissionSuccess(false);
-      setSubmissionError("Error submitting form.");
     }
   };
 
