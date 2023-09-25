@@ -54,13 +54,15 @@ function App() {
       ]);
       
       console.log("After form submission");
+      console.log("Data:", data);
+console.log("Error:", error);
   
       if (data) {
         setSubmissionSuccess(true);
         setSubmissionError(null);
       } else {
         setSubmissionSuccess(false);
-        setSubmissionError(error && error.message ? error.message : "Error submitting form.");
+        setSubmissionError(error && error.message ? error.message : "Error submitting form. Please try again");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -274,7 +276,6 @@ function App() {
                       Submission successful!
                     </div>
                   )}
-
                   {submissionError && (
                     <div className="submission-error">{submissionError}</div>
                   )}
