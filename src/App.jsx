@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./btn.css";
 import "./form.css";
 import "./styles.css";
+import { Analytics } from "@vercel/analytics/react";
 import { createClient } from "@supabase/supabase-js";
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
   };
 
   const supabaseUrl = "https://mqrioyirlvbguhnbtwgy.supabase.co";
-  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xcmlveWlybHZiZ3VobmJ0d2d5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU2NjE4MTMsImV4cCI6MjAxMTIzNzgxM30.tBoLMPows5SDZWA3UqlpOG8hCn-uqc_y8IqaJMCXVPY";
+  const supabaseKey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xcmlveWlybHZiZ3VobmJ0d2d5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU2NjE4MTMsImV4cCI6MjAxMTIzNzgxM30.tBoLMPows5SDZWA3UqlpOG8hCn-uqc_y8IqaJMCXVPY";
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   const handleSubmit = async (event) => {
