@@ -40,7 +40,7 @@ function App() {
     event.preventDefault();
 
     try {
-      const { data, error } = await supabase.from("contact").upsert([
+      const { data, error } = await supabase.from("contact_form").upsert([
         {
           nombre: event.target.nombre.value,
           apellidos: event.target.apellidos.value,
